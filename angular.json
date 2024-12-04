@@ -20,16 +20,24 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
+            "assets": [ 
+              "src/assets",
+              { 
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+               
+           "node_modules/jquery/dist/jquery.min.js",  
+           "node_modules/@popperjs/core/dist/umd/popper.min.js",  
+               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+             
+            ]
           },
           "configurations": {
             "production": {
@@ -92,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cc73f24b-e5e3-473d-8327-a50c78893765"
   }
 }
