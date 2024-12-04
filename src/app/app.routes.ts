@@ -6,7 +6,6 @@ import { HomeComponent } from './components/main/home/home.component';
 import { VideoMasterComponent } from './components/main/video-master/video-master.component';
 import { GetApiComponent } from './components/main/get-api/get-api.component';
 import { AddNewUserComponent } from './components/main/add-new-user/add-new-user.component';
-import { SelectFilterComponent } from './components/main/select-filter/select-filter.component';
 
 export const routes: Routes = [
 
@@ -42,11 +41,8 @@ export const routes: Routes = [
                     {
                         path:"addNewUser",
                         component:AddNewUserComponent
-                    },
-                    {
-                        path:"selectFilter",
-                        component:SelectFilterComponent
                     }
+    
                 
                 ]
             }
