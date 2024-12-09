@@ -67,7 +67,7 @@
 }
 
 .login-right {
-  background: url("assets/images/login-bg.png");
+  background: url("/assets/images/login-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
