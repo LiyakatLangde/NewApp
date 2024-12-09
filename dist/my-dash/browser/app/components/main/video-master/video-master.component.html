@@ -1,0 +1,100 @@
+<div class="row p-3">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">
+        <h5>Video List</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          @for (item of videoList; track $index) {
+
+          <div class="col-12 my-3">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">{{ item.title }}</h4>
+                <h3 class="card-title">{{ item.author }}</h3>
+                <img src="{{ item.thumbnailUrl }}" alt="" />
+                <p class="card-text">{{ item.description }}</p>
+                <p class="card-text">{{ item.duration }}</p>
+                <a>
+                  <button (click)="onEdit(item)" class="btn btn-success btn-sm">
+                    Edit
+                  </button>
+                </a>
+                <a class="mx-2">
+                  <button
+                    (click)="deleteVideo(item.id)"
+                    class="btn btn-danger btn-sm"
+                  >
+                    Delete
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">
+        <h5>New Videos Form</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="videoForm" (submit)="onSaveVideo()">
+          <div class="row">
+            <div class="col-12">
+              <label for="">Title</label>
+              <input
+                type="text"
+                formControlName="videoTitle"
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Url</label>
+              <input
+                type="text"
+                formControlName="videoUrl"
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Thumbnail</label>
+              <input
+                type="text"
+                formControlName="videoThumbnail"
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Duration</label>
+              <input
+                type="text"
+                formControlName="totalDuration"
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <label for="">Discription</label>
+              <textarea name="" id="" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 text-center">
+              <button class="btn btn-secondary">Reset</button>
+            </div>
+            <div class="col-6 text-center">
+              <button type="submit" class="btn btn-secondary">
+                Save Video
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
